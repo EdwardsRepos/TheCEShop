@@ -1,4 +1,4 @@
-package the_CE_Shop;
+package com.the_CE_Shop;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,11 +30,11 @@ public class The_CE_Shop{
                 //is sorted last index would be the largest number in the array. This if condition also checks that the current
                 // index 'i' is not equal to the largest number in the array (nums.length - 1)
                 if (nums[i] < nums[(nums.length - 1)] && nums[i] != nums[(nums.length - 1)]) {
-                   // if conditions are true then 'i' is the second largest.
+                    // if conditions are true then 'i' is the second largest.
                     secondlargest = nums[i];
-                // another condition to check for equality
+                    // another condition to check for equality
                 } else if (nums[i] == nums[(nums.length - 1)]) {
-                //if index at 'i' is equal then count goes up by 1
+                    //if index at 'i' is equal then count goes up by 1
                     count++;
                     //if the value of count is equal to the size of the array, this means all numbers in the array are equal
                     if (count == nums.length){
@@ -146,14 +146,14 @@ public class The_CE_Shop{
      * @return
      *
      */
-        // this method will return a list of list with integers with possible conbinations that add up to 10
-        public List<List<Integer>> combinationThatAddToTen(int[] givenArray, int sum) {
-            // empty list to store the list of possible combinations
-            List<List<Integer>> combinations = new ArrayList();
-            // created a helper or recursive method
-            lastPossibleComb(givenArray, 0, sum, new ArrayList(), combinations);
-            return combinations;
-        }
+    // this method will return a list of list with integers with possible conbinations that add up to 10
+    public List<List<Integer>> combinationThatAddToTen(int[] givenArray, int sum) {
+        // empty list to store the list of possible combinations
+        List<List<Integer>> combinations = new ArrayList();
+        // created a helper or recursive method
+        lastPossibleComb(givenArray, 0, sum, new ArrayList(), combinations);
+        return combinations;
+    }
     /**
      * Recursive helper method. The approach is to
      * @param givenArray
@@ -162,27 +162,27 @@ public class The_CE_Shop{
      * @param list
      * @param result
      */
-        public void lastPossibleComb(int[] givenArray, int index, int sum, List<Integer> list, List<List<Integer>> result) {
-            //sum represents 10 since we are subtracting givenArray[i] in each recursive call, when sum becomes < 0
-            // would mean the current combination is more than 10
-            if (sum < 0)
-                return;
-            // if sum equals to 0  since we are subtracting givenArray[i] in each recursive call,
-            // sum == 0 represents the combination adding to 10. then we add current combination to the a new list.
-            if (sum == 0)
-                result.add(new ArrayList(list));
-            //loop through the array and
-            for (int i = index; i < givenArray.length; i++) {
-                // add current iterarion to the list
-                list.add(givenArray[i]);
-                //make a recursion call to substract current sum - givenArray[i] to check for sum to == 0
-                lastPossibleComb(givenArray, i, sum - givenArray[i], list, result);
-                list.remove(list.size() - 1);
-            }
+    public void lastPossibleComb(int[] givenArray, int index, int sum, List<Integer> list, List<List<Integer>> result) {
+        //sum represents 10 since we are subtracting givenArray[i] in each recursive call, when sum becomes < 0
+        // would mean the current combination is more than 10
+        if (sum < 0)
+            return;
+        // if sum equals to 0  since we are subtracting givenArray[i] in each recursive call,
+        // sum == 0 represents the combination adding to 10. then we add current combination to the a new list.
+        if (sum == 0)
+            result.add(new ArrayList(list));
+        //loop through the array and
+        for (int i = index; i < givenArray.length; i++) {
+            // add current iterarion to the list
+            list.add(givenArray[i]);
+            //make a recursion call to substract current sum - givenArray[i] to check for sum to == 0
+            lastPossibleComb(givenArray, i, sum - givenArray[i], list, result);
+            list.remove(list.size() - 1);
         }
+    }
 
     public static void main(String[] args) throws Exception {
-       //Q1
+        //Q1
         int[] exmpl = new int[4];
         exmpl[0] = 250;
         exmpl[1] = 255;
@@ -220,9 +220,7 @@ public class The_CE_Shop{
         combinations[2] = 3;
         combinations[3] = 2;
         combinations[4] = 7;
-        InterviewTasks obj = new InterviewTasks();
+        The_CE_Shop obj = new The_CE_Shop();
         System.out.println(obj.combinationThatAddToTen(combinations,10));
     }
 }
-
-

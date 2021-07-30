@@ -5,11 +5,13 @@ https://docs.google.com/document/d/1KG2dIXH-oDjGW_wt32Ew8tu_dtMOD0cu/edit
 
 
 I just want to start off by saying I could have taken the easier road and given answers like this:
+
 Q1:
 public static int question1(int[] arg0) {
         Arrays.sort(arg0);
         return arg0[arg0.length - 2];
     }
+    
 Q2:
     public static boolean question2(String arg1, String arg2) {
         return Integer.parseInt(arg1) > Integer.parseInt(arg2);
